@@ -1,5 +1,4 @@
 package deadlock;
-
 public class AccountService {
    public void transfer(Account from,Account to,int amount) {
 	   synchronized (from) {
