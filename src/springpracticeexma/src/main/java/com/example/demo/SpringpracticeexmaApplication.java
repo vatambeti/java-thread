@@ -1,11 +1,12 @@
 package com.example.demo;
 
 import org.springframework.boot.SpringApplication;
+
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
 import com.example.demo.controller.EmployeeController;
-import com.example.demo.service.DepartmentService;
+import com.example.demo.service.PaymentService;
 
 @SpringBootApplication
 public class SpringpracticeexmaApplication {
@@ -17,15 +18,18 @@ public class SpringpracticeexmaApplication {
 	                context.getBean(EmployeeController.class);
 
 	        controller.displayEmployee();
+	        PaymentService obj=context.getBean(PaymentService.class);
+	        obj.makePayment();
 	        
-	        DepartmentService dpj1=context.getBean(DepartmentService.class);
-	        DepartmentService dpj2=context.getBean(DepartmentService.class);
 	        
-	        dpj1.getDepartmentDetails();
+//	        DepartmentService dpj1=context.getBean(DepartmentService.class);
+//	        DepartmentService dpj2=context.getBean(DepartmentService.class);
+//	        
+//	        dpj1.getDepartmentDetails();
+//
+//	        System.out.println("Are Both Objects Same? " + (dpj1 == dpj2));
 
-	        System.out.println("Are Both Objects Same? " + (dpj1 == dpj2));
-
-	        context.close();
+	       // context.close();
 	}
 
 }
